@@ -1,5 +1,6 @@
 import { createApp } from "https://servestjs.org/@v1.0.0/mod.ts";
 import * as flags from "https://deno.land/std/flags/mod.ts";
+import { routes } from "./router.ts";
 
 const DEFAULT_PORT = 8080;
 const argPort = flags.parse(Deno.args).port;
@@ -11,13 +12,6 @@ if (isNaN(port)) {
 }
 
 const app = createApp();
-app.handle("/", async (req) => {
-  await req.respond({
-    status: 200,
-    headers: new Headers({
-      "content-type": "text/plain",
-    }),
-    body: "Hello, Servest!",
-  });
-});
+
+app.route("/", routes())
 app.listen({ port });

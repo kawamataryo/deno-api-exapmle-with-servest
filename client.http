@@ -1,0 +1,28 @@
+@id = 5adc241f-4511-4011-acc4-5247382117b4
+
+###
+GET http://localhost:8080/posts
+
+###
+GET http://localhost:8080/posts/{{id}}
+
+###
+POST http://localhost:8080/posts
+content-type: application/json
+
+{
+    "title": "sample",
+    "content": "Laborum mollit duis ad consequat."
+}
+
+###
+PUT http://localhost:8080/posts/{{id}}
+content-type: application/json
+
+{
+    "title": "update",
+    "content": "Labore minim sit et id aliquip ad voluptate nisi mollit incididunt id irure enim."
+}
+
+###
+DELETE http://localhost:8080/posts/{{id}}
