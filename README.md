@@ -1,6 +1,6 @@
 # RESTful API exapmle with Deno and Servest
 
-This is an RESTfull API example with deno and servest.
+This is an RESTfull API example with Deno and Servest.
 
 ## Usage
 
