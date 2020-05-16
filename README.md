@@ -2,7 +2,9 @@
 
 This is an RESTfull API example with deno and servest.
 
-## Get started
+## Usage
+
+### 1. Server start
 
 After clone this repository, start api server.
 
@@ -10,30 +12,43 @@ After clone this repository, start api server.
 $ deno run --allow-net src/main.ts
 ```
 
+### 2. Requst to API
 Request with cURL or [VSCode REST API](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
+**Get all posts**
 ```bash
-# get all posts
 $ curl --request GET \
   --url http://localhost:8080/posts
+```
 
-# get single post
+**Get single post**
+
+```bash
 $ curl --request GET \
   --url http://localhost:8080/posts/{POST_ID}
+```
 
-# create post
+**Create post**
+
+```bash
 $ curl --request POST \
   --url http://localhost:8080/posts \
   --header 'content-type: application/json' \
   --data '{"title": "sample","content": "Laborum mollit duis ad consequat."}'
+```
 
-# update post
+**Update post**
+
+```bash
 $ curl --request PUT \
   --url http://localhost:8080/posts/{POST_ID} \
   --header 'content-type: application/json' \
   --data '{"title": "update","content": "Labore minim sit et id aliquip ad voluptate nisi mollit incididunt id irure enim."}'
+```
 
-# delete post
+**Delete post**
+
+```
 $ curl --request DELETE \
   --url http://localhost:8080/posts/{POST_ID}
 ```
