@@ -1,15 +1,16 @@
-# Sandbox for deno
+# RESTful API exapmle with Deno and Servest
+
+This is an RESTfull API example with deno and servest.
 
 ## Get started
 
-### start server
-Start server with deno.
+After clone this repository, start api server.
 
 ```bash
 $ deno run --allow-net src/main.ts
 ```
 
-Request with cURL.
+Request with cURL or [VSCode REST API](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).
 
 ```bash
 # get all posts
@@ -36,3 +37,8 @@ $ curl --request PUT \
 $ curl --request DELETE \
   --url http://localhost:8080/posts/{POST_ID}
 ```
+
+## Dependencies
+
+- [Deno](https://github.com/denoland/deno) - A secure JavaScript and TypeScript runtime.
+- [Servest](https://github.com/keroxp/servest) -A progressive http server for Deno.
