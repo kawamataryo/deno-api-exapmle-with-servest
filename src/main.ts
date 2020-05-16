@@ -7,11 +7,11 @@ const argPort = flags.parse(Deno.args).port;
 const port = argPort ? Number(argPort) : DEFAULT_PORT;
 
 if (isNaN(port)) {
-  console.error('Port is not a number.');
+  console.error("Port is not a number.");
   Deno.exit(1);
 }
 
 const app = createApp();
 
-app.route("/", routes())
+app.route("/", routes());
 app.listen({ port });

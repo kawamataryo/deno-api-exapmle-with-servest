@@ -1,5 +1,5 @@
 import {
-  ServerRequest
+  ServerRequest,
 } from "https://servestjs.org/@v1.0.0/mod.ts";
 import { posts, Post } from "../models/post.ts";
 
@@ -17,7 +17,7 @@ export const getAllPosts = async (req: ServerRequest) => {
     }),
     body: JSON.stringify(posts),
   });
-}
+};
 
 export const getPost = async (req: ServerRequest) => {
   const [_, id] = req.match;
@@ -28,12 +28,12 @@ export const getPost = async (req: ServerRequest) => {
     }),
     body: JSON.stringify(posts.find((p) => p.id === id)),
   });
-}
+};
 
 export const createPost = async (req: ServerRequest) => {
-  const bodyJson = (await req.json()) as PostPayload
-  const post = new Post(bodyJson.title, bodyJson.content)
-  posts.push(post)
+  const bodyJson = (await req.json()) as PostPayload;
+  const post = new Post(bodyJson.title, bodyJson.content);
+  posts.push(post);
 
   await req.respond({
     status: 200,
@@ -42,25 +42,25 @@ export const createPost = async (req: ServerRequest) => {
     }),
     body: JSON.stringify(post),
   });
-}
+};
 
 export const deletePost = async (req: ServerRequest) => {
   const [_, id] = req.match;
-  const index =  posts.findIndex((p) => p.id === id)
-  posts.splice(index, 1)
+  const index = posts.findIndex((p) => p.id === id);
+  posts.splice(index, 1);
 
   await req.respond({
-    status: 204
+    status: 204,
   });
-}
+};
 
 export const updatePost = async (req: ServerRequest) => {
   const [_, id] = req.match;
-  const bodyJson = (await req.json()) as PostPayload
-  const index =  posts.findIndex((p) => p.id === id)
+  const bodyJson = (await req.json()) as PostPayload;
+  const index = posts.findIndex((p) => p.id === id);
 
-  posts[index].title = bodyJson.title
-  posts[index].content = bodyJson.content
+  posts[index].title = bodyJson.title;
+  posts[index].content = bodyJson.content;
 
   await req.respond({
     status: 200,
@@ -69,4 +69,4 @@ export const updatePost = async (req: ServerRequest) => {
     }),
     body: JSON.stringify(posts[index]),
   });
-}
+};
