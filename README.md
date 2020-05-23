@@ -8,8 +8,15 @@ This is an RESTfull API example with Deno and Servest.
 
 After clone this repository, start api server.
 
+on local.
 ```bash
-$ deno run --allow-net src/main.ts
+$ deno run --allow-net app/main.ts
+```
+
+on Docker.
+
+```bash
+docker build -t app . && docker run -it --init -p 8080:8888 app
 ```
 
 ### 2. Requst to API
