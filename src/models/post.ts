@@ -13,6 +13,7 @@ export class Post {
       id: this.id,
       title: this.title,
       content: this.content,
+      createdAt: this.createdAt
     };
   }
 }
