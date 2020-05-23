@@ -22,3 +22,5 @@ export const posts = [] as Post[];
 export const initializedPosts = () => {
   posts.push(new Post('Hello Blog', 'My first post.'))
 }
+
+initializedPosts();
