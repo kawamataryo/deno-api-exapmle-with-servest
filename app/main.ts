@@ -1,5 +1,4 @@
 import { createApp } from "https://servestjs.org/@v1.0.0/mod.ts";
-import * as flags from "https://deno.land/std/flags/mod.ts";
 import { routes } from "./router.ts";
 
 const DEFAULT_PORT = 8080;
