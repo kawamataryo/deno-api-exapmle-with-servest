@@ -3,8 +3,8 @@ import * as flags from "https://deno.land/std/flags/mod.ts";
 import { routes } from "./router.ts";
 
 const DEFAULT_PORT = 8080;
-const argPort = flags.parse(Deno.args).port;
-const port = argPort ? Number(argPort) : DEFAULT_PORT;
+const envPort = Deno.env.get("PORT");
+const port = envPort ? Number(envPort) : DEFAULT_PORT;
 
 if (isNaN(port)) {
   console.error("Port is not a number.");

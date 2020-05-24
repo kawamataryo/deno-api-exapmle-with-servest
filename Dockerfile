@@ -1,13 +1,12 @@
 FROM hayd/alpine-deno:1.0.1
 
-EXPOSE 8888
+ENV PORT 8080
+ENV HOST 0.0.0.0
 
 WORKDIR /app
 
-# Prefer not to run as root.
 USER deno
 
-# These steps will be re-run upon each file change in your working directory:
-ADD . .
+COPY . .
 
-CMD ["run", "--allow-net", "app/main.ts", "--port", "8888"]
+CMD ["run", "--allow-net", "--allow-env", "app/main.ts"]

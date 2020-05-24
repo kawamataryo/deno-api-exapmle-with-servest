@@ -9,6 +9,7 @@ This is an RESTfull API example with Deno and Servest.
 After clone this repository, start api server.
 
 on local.
+
 ```bash
 $ deno run --allow-net app/main.ts
 ```
@@ -16,8 +17,10 @@ $ deno run --allow-net app/main.ts
 on Docker.
 
 ```bash
-docker build -t app . && docker run -it --init -p 8080:8888 app
+docker build -t app . && docker run -it --init -p 8080:8080 app
 ```
+
+Access to http://localhost:8080.
 
 ### 2. Requst to API
 Request with cURL or [VSCode REST API](https://marketplace.visualstudio.com/items?itemName=humao.rest-client).

@@ -1,0 +1,4 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build','-f','Dockerfile','-t','gcr.io/qiita-demo-project/deno-example','.']
+images: ['gcr.io/qiita-demo-project/deno-example']
